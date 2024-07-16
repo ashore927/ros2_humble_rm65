@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
+
+    <!-- Used for fixing robot to Gazebo 'base_link' 将机械手的基座固定在世界坐标上-->
+    <link name="world"/>
+    <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 0.815" rpy="0 0 0"/>
+    </joint>
+
+    <!-- Import claw_description urdf file -->
+    <xacro:include filename="$(find rm_description)/urdf/rm_65_gazebo.urdf" />
+    <!-- <xacro:include filename="$(find rm_description)/urdf/camera.urdf" /> -->
+    <!-- <xacro:include filename="$(find rm_description)/urdf/gripper.urdf" /> -->
+
+
+    <!-- 连接机械臂与相机 -->
+    <!-- <joint name="connect_camera" type="fixed">
+        <origin xyz="-0.045 -0.029 0" rpy="0 0 0" />
+        <parent link="rm_65_gazebo/Link6" />
+        <child link="camera/Camera_base_link" />
+    </joint> -->
+
+    <!-- 连接机械臂与夹爪 -->
+    <!-- <joint name="connect_gripper" type="fixed">
+       <origin xyz="0.045 0.039 0.051" rpy="-1.5708 -1.5708 0" />
+       <parent link="camera/Camera_base_link" />
+       <child link="gripper/gripper_base_link" />
+    </joint> -->
+
+    <!-- 对一些link进行gazebo的属性设置 -->
+    <gazebo reference="rm_65_gazebo/base_link">
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link1">
+        <material>Gazebo/Purple</material>
+        <self_collide>false</self_collide>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link2">
+        <material>Gazebo/Red</material>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link3">
+        <material>Gazebo/Blue</material>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link4">
+        <material>Gazebo/Green</material>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link5">
+        <material>Gazebo/Yellow</material>
+        <gravity>false</gravity>
+    </gazebo>
+    <gazebo reference="rm_65_gazebo/Link6">
+        <material>Gazebo/Orange</material>
+        <gravity>false</gravity>
+    </gazebo>
+
+
+    <gazebo>
+        <is_static>true</is_static>
+        <self_collide>true</self_collide>
+    </gazebo>
+
+
+    <!-- 声明ros2_control -->
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="joint1">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="joint2">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="joint3">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="joint4">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="joint5">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+        <joint name="joint6">
+            <command_interface name="position"/>
+            <state_interface name="position">
+                <param name="initial_value">0</param>
+            </state_interface>
+            <state_interface name="velocity"/>
+        </joint>
+    </ros2_control>
+
+    <!-- 加载ros2_control插件 -->
+    <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+            <!-- <parameters>$(find rm_65_config)/config/gazebo_controllers.yaml</parameters> -->
+            <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+            <robot_param>robot_description</robot_param>
+            <robot_param_node>robot_state_publisher</robot_param_node>
+        </plugin>
+    </gazebo>
+
+
+</robot>

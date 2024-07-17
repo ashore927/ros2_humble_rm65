@@ -16,7 +16,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot-foxy/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
+          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
       </geometry>
       <material name="custom_color">
         <color rgba="0 1 0 1" /> <!-- Green color, fully opaque -->
@@ -28,7 +28,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot-foxy/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
+          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
       </geometry>
     </collision>
   </link>

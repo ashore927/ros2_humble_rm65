@@ -52,7 +52,7 @@
     </model>
 
     <model name='cup'>
-      <pose frame=''>-1 0 0.815 0 0 0</pose>
+      <pose frame=''>-1 0 0.83 0 0 -2.98</pose>
       <include>
       <static>false</static>
         <uri>model://plastic_cup</uri>

@@ -11,6 +11,7 @@
     <joint name="fixed" type="fixed">
         <parent link="world"/>
         <child link="base_link"/>
+        <origin xyz="0 0 0.815" rpy="0 0 0"/>
     </joint>
 
     <!-- 对一些link进行gazebo的属性设置 -->

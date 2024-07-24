@@ -19,6 +19,7 @@ def generate_launch_description():
     pkg_share = FindPackageShare(package=package_name).find(package_name) 
     urdf_model_path = os.path.join(pkg_share, f'config/gazebo_65_description.urdf.xacro')
 
+    gazebo_world_path = os.path.join(get_package_share_directory('rm_gazebo'),'world','realman.world')
 
     doc = xacro.parse(open(urdf_model_path))
     xacro.process_doc(doc)
@@ -28,6 +29,7 @@ def generate_launch_description():
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('gazebo_ros'), 'launch'), '/gazebo.launch.py']),
+                launch_arguments={'world': gazebo_world_path}.items(),
              )
     
     # gazebo =  ExecuteProcess(

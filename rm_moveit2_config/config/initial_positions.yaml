@@ -1,0 +1,13 @@
+# Default initial positions for rm_65_description's ros2_control fake system
+
+initial_positions:
+  finger1_link1_finger1_link2: 0
+  finger2_link1_finger2_link2: 0
+  gripper_joint1: 0
+  gripper_joint2: 0
+  joint1: 0
+  joint2: 0
+  joint3: 0
+  joint4: 0
+  joint5: 0
+  joint6: 0

@@ -23,7 +23,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/base_link.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -37,7 +37,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/base_link.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -63,7 +63,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link1.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link1.STL" />
       </geometry>
       <material
         name="">
@@ -77,7 +77,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link1.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link1.STL" />
       </geometry>
     </collision>
   </link>
@@ -121,7 +121,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link2.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link2.STL" />
       </geometry>
       <material
         name="">
@@ -135,7 +135,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link2.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link2.STL" />
       </geometry>
     </collision>
   </link>
@@ -179,7 +179,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link3.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link3.STL" />
       </geometry>
       <material
         name="">
@@ -193,7 +193,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link3.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link3.STL" />
       </geometry>
     </collision>
   </link>
@@ -237,7 +237,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link4.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link4.STL" />
       </geometry>
       <material
         name="">
@@ -251,7 +251,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link4.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link4.STL" />
       </geometry>
     </collision>
   </link>
@@ -295,7 +295,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link5.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link5.STL" />
       </geometry>
       <material
         name="">
@@ -309,7 +309,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link5.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link5.STL" />
       </geometry>
     </collision>
   </link>
@@ -372,7 +372,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link6.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link6.STL" />
       </geometry>
       <material
         name="">
@@ -386,7 +386,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/link6.STL" />
+          filename="package://rm_description/meshes/rm_65_arm/link6.STL" />
       </geometry>
     </collision>
   </link>
@@ -417,7 +417,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
+          filename="package://rm_description/meshes/camera/camera_stander_no_hole.STL" />
       </geometry>
       <material name="custom_color">
         <color rgba="0 1 0 1" /> <!-- Green color, fully opaque -->
@@ -429,7 +429,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/rm_65_arm/camera_stander_no_hole.STL" />
+          filename="package://rm_description/meshes/camera/camera_stander_no_hole.STL" />
       </geometry>
     </collision>
   </link>
@@ -452,7 +452,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/base_link.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/base_link.STL" />
       </geometry>
       <material name="">
         <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
@@ -461,7 +461,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/base_link.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -483,7 +483,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link1.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/Link1.STL" />
       </geometry>
       <material name="">
         <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
@@ -492,7 +492,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link1.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/Link1.STL" />
       </geometry>
     </collision>
   </link>
@@ -538,7 +538,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link11.STL" />
+          filename="package://rm_description/meshes/gripper/Link11.STL" />
       </geometry>
       <material
         name="">
@@ -552,7 +552,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link11.STL" />
+          filename="package://rm_description/meshes/gripper/Link11.STL" />
       </geometry>
     </collision>
   </link>
@@ -575,7 +575,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link2.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/Link2.STL" />
       </geometry>
       <material name="">
         <color rgba="0.894117647058823 0.913725490196078 0.929411764705882 1" />
@@ -584,7 +584,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link2.STL" />
+        <mesh filename="package://rm_description/meshes/gripper/Link2.STL" />
       </geometry>
     </collision>
   </link>
@@ -630,7 +630,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link22.STL" />
+          filename="package://rm_description/meshes/gripper/Link22.STL" />
       </geometry>
       <material
         name="">
@@ -644,7 +644,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="/home/wangwei/ros2_ws/src/ros2_rm_robot/rm_description/meshes/gripper/Link22.STL" />
+          filename="package://rm_description/meshes/gripper/Link22.STL" />
       </geometry>
     </collision>
   </link>

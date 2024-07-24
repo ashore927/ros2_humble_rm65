@@ -19,14 +19,10 @@ def generate_launch_description():
     pkg_share = FindPackageShare(package=package_name).find(package_name) 
     urdf_model_path = os.path.join(pkg_share, f'config/gazebo_65_description.urdf.xacro')
 
-    
-    print("---", urdf_model_path)
 
     doc = xacro.parse(open(urdf_model_path))
     xacro.process_doc(doc)
     params = {'robot_description': doc.toxml()}
-
-    print("urdf", doc.toxml())
 
     # 启动gazebo
     gazebo = IncludeLaunchDescription(
@@ -47,6 +43,7 @@ def generate_launch_description():
         output='screen'
     )
 
+    #启动机器人模型到Gazebo
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
                                    '-entity', f'{robot_name_in_model}'], 
@@ -60,11 +57,22 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 路径执行控制器，也就是那个action？
-    # 这个rm_group_controller需要根据urdf文件里面引用的ros2_controllers.yaml里面的名字确定
-    load_joint_trajectory_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
-             'rm_group_controller'],
+    # # 路径执行控制器，也就是那个action？
+    # # 这个rm_group_controller需要根据urdf文件里面引用的ros2_controllers.yaml里面的名字确定
+    # load_joint_trajectory_controller = ExecuteProcess(
+    #     cmd=['ros2', 'control', 'load_controller', '--set-state', 'active',
+    #          'arm_controller'],
+    #     output='screen'
+    # )
+    # 加载 arm_controller 控制器
+    load_arm_controller = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'arm_controller'],
+        output='screen'
+    )
+
+    # 加载 gripper_controller 控制器
+    load_gripper_controller = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'gripper_controller'],
         output='screen'
     )
 
@@ -81,16 +89,27 @@ def generate_launch_description():
     close_evt2 = RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=load_joint_state_controller,
-                on_exit=[load_joint_trajectory_controller],
+                on_exit=[load_arm_controller],
             )
     )
     
+    # # 监听 load_arm_controller，当其退出（完全启动）时，启动 load_gripper_controller
+    close_evt3 = RegisterEventHandler(
+        event_handler=OnProcessExit(
+            target_action=load_arm_controller,
+            on_exit=[load_gripper_controller],
+        )
+    )
+
+
     ld = LaunchDescription([
         close_evt1,
         close_evt2,
+        close_evt3,
         gazebo,
         node_robot_state_publisher,
         spawn_entity,
+
     ])
 
     return ld

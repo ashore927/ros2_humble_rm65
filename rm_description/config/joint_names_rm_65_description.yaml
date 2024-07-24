@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6', ]
+controller_joint_names: ['', 'joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6','gripper_base_joint', 'gripper_joint1', 'finger1_link1_finger1_link2', 'gripper_joint2','finger2_link1_finger2_link2' ]
